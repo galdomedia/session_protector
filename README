@@ -1,0 +1,17 @@
+= session_protector
+
+* http://github.com/groovyruby/session_protector
+
+== DESCRIPTION:
+
+Logout user if HTTP_USER_AGENT and IP differ from ones saved in session. This make harder to successfull use session hijacking tools like firesheep(http://codebutler.com/firesheep).
+
+== REQUIREMENTS:
+
+Devise or other authentication system based on Warden
+
+== INSTALL:
+
+rails plugin install http://github.com/groovyruby/session_protector.git
+
+Copyright (c) 2010 [name of plugin creator], released under the MIT license
