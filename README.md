@@ -8,6 +8,8 @@ DESCRIPTION
 
 Logout user if HTTP_USER_AGENT and IP differs from the one saved in session. This make it harder to successfully use session hijacking tools like [firesheep](http://codebutler.com/firesheep).
 
+Also, usage of `browser_fingerprint.js` allows usage of pseudo-unique fingerprint of users browser details. Both combined makes almost impossible to hijack session (yeah, right).
+
 REQUIREMENTS
 ------------
 
@@ -26,7 +28,7 @@ And reference to browser_fingerprint.js script in HEAD section or your layout. I
 
 `<%= javascript_include_tag 'browser_fingerprint', :cache => true %>`
  
-browser_fingerprint.js is not yet JavaScript framework agnostic. It _REQUIRES jQuery_ now.
+`browser_fingerprint.js` is _not yet_ JavaScript framework agnostic. It _REQUIRES jQuery_ now.
 
 
 AUTHORS
