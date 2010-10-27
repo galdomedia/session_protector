@@ -6,7 +6,7 @@ session_protector
 DESCRIPTION
 -----------
 
-Logout user if HTTP_USER_AGENT and IP differs from the one saved in session. This make it harder to successfully use session hijacking tools like firesheep (http://codebutler.com/firesheep).
+Logout user if HTTP_USER_AGENT and IP differs from the one saved in session. This make it harder to successfully use session hijacking tools like [firesheep](http://codebutler.com/firesheep).
 
 REQUIREMENTS
 ------------
@@ -32,8 +32,8 @@ browser_fingerprint.js is not yet JavaScript framework agnostic. It _REQUIRES jQ
 AUTHORS
 -------
 
-Piotr Boniecki (piotr [at] galdomedia [dot] pl)
-Maciej Litwiniuk (maciej [at] galdomedia [dot] pl )
+*  Piotr Boniecki (piotr [at] galdomedia [dot] pl)
+*  Maciej Litwiniuk (maciej [at] galdomedia [dot] pl )
 
 
 CREDITS
