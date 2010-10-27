@@ -39,7 +39,9 @@ Maciej Litwiniuk (maciej [at] galdomedia [dot] pl )
 CREDITS
 -------
 
-
+*  [Electronic Frontier Foundation](https://panopticlick.eff.org/) - Panopticlick - Browser uniqueness (fingerprint) detection
+*  [Eric Gerds](http://www.pinlady.net/PluginDetect/) - PluginDetect
+*  [Kevin van Zonneveld](http://phpjs.org/functions/md5:469) - JavaScript MD5
 
 
 Copyright (c) 2010 Piotr Boniecki (piotr [at] galdomedia [dot] pl), released under the MIT license
