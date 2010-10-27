@@ -8,4 +8,10 @@ Warden::Manager.after_set_user do |record, warden, options|
       warden.logout(scope)
     end
   end
+  required_string = nil
+  if warden.session(scope)['browser_fingerprint'].blank? and not required_string.blank?
+    warden.session(scope)['browser_fingerprint'] = required_string
+  elsif required_string != warden.session(scope)['browser_fingerprint']
+    warden.logout(scope)
+  end
 end
