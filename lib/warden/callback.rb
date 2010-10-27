@@ -9,6 +9,10 @@ Warden::Manager.after_set_user do |record, warden, options|
     end
   end
   required_string = nil
+  cookies = warden.env['action_dispatch.cookies']
+  if cookies and cookies.keys.member?('_browser_fingerprint')
+    required_string = cookies['_browser_fingerprint']
+  end
   if warden.session(scope)['browser_fingerprint'].blank? and not required_string.blank?
     warden.session(scope)['browser_fingerprint'] = required_string
   elsif required_string != warden.session(scope)['browser_fingerprint']
