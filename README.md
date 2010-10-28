@@ -35,10 +35,10 @@ CONFIGURATION
 
 You may want to _disable_ IP checking. To do this simply paste following code in `config/initializers/session_protector.rb`
 
-`SessionProtector.setup do |config|
-  # don't check IP address
-  config.check_ip = false
-end`
+    SessionProtector.setup do |config|
+      # don't check IP address
+      config.check_ip = false
+    end
 
 
 HOW IT WORKS
