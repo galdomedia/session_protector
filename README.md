@@ -30,6 +30,14 @@ And reference to browser_fingerprint.js script in HEAD section or your layout. I
  
 `browser_fingerprint.js` is _not yet_ JavaScript framework agnostic. It _REQUIRES jQuery_ now.
 
+CONFIGURATION
+-------------
+
+SessionProtector.setup do |config|
+  # don't check IP address
+  config.check_ip = false
+end
+
 
 HOW IT WORKS
 ------------
