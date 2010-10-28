@@ -8,7 +8,7 @@ DESCRIPTION
 
 Logout user if HTTP_USER_AGENT and IP differs from the one saved in session. This make it harder to successfully use session hijacking tools like [firesheep](http://codebutler.com/firesheep).
 
-Also, usage of `browser_fingerprint.js` allows usage of pseudo-unique fingerprint of users browser details. Both combined makes almost impossible to hijack session (yeah, right).
+Also, usage of `browser_fingerprint.js` allows usage of pseudo-unique fingerprint of users browser details. Both combined makes much harder impossible to hijack session (yeah, right).
 
 REQUIREMENTS
 ------------
@@ -29,6 +29,15 @@ And reference to browser_fingerprint.js script in HEAD section or your layout. I
 `<%= javascript_include_tag 'browser_fingerprint', :cache => true %>`
  
 `browser_fingerprint.js` is _not yet_ JavaScript framework agnostic. It _REQUIRES jQuery_ now.
+
+
+HOW IT WORKS
+------------
+
+* middleware checks, if USER_AGENT didn't change. This should scare of most part of script kiddies using firesheep
+* javascript part checks for browsers USER_AGENT, installed plugins, screen resolution, timezone, browser capabilities and makes md5 hash from string containing all those informations. hash is stored in cookie, then, if not empty, it's assigned to session. If on next page load (script have to be executed at least once, somehow) hash strings on server side (session) and client are different, session is destroyed.
+
+It's not the best nor ultimate solution, but as long as you can not send cookies via SSL, nothing can assure you, that session will not be hijacked - bas guys can still gather users cookies, sniff for user_agent, use browser spoofing tools, etc. 
 
 
 AUTHORS
