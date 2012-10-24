@@ -1,7 +1,7 @@
 session_protector
 =================
 
-* http://github.com/groovyruby/session_protector
+* http://github.com/galdomedia/session_protector
 
 DESCRIPTION
 -----------
@@ -21,7 +21,7 @@ REQUIREMENTS
 INSTALL
 -------
 
-`rails plugin install git://github.com/groovyruby/session_protector.git`
+`rails plugin install git://github.com/galdomedia/session_protector.git`
 
 You MAY also want to install browser_fingerprint script. To do this simply run:
 
