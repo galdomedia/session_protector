@@ -1,11 +1,20 @@
+require "session_protector/version"
+
 module SessionProtector
-  VERSION = '0.0.1'
-  
   # Check IP. True by default
-  mattr_accessor :check_ip
+  def self.check_ip
+    @@check_ip
+  end
+
+  def self.check_ip= attr
+    @@check_ip = attr
+  end
+
   @@check_ip = true
 
   def self.setup
     yield self
   end
 end
+
+require 'session_protector/rails'
