@@ -1,27 +1,9 @@
 module SessionProtector
   class InstallGenerator < Rails::Generators::Base
+    source_root File.expand_path("../../../../app/assets/javascripts", __FILE__)
 
-    FILES = [
-      'browser_fingerprint.js'
-    ]
-
-    desc "Copy session_protector files to public/javascript folder."
-
-    source_root File.expand_path('../templates', __FILE__)
-
-    def install_session_protector
-      src_prefix = File.join('javascripts')
-      dest_prefix = File.join('public', 'javascripts')
-
-      FILES.each do |path|
-        src = File.join(src_prefix, path)
-        dest = File.join(dest_prefix, path)
-
-        copy_file(src, dest) if path =~ /\./
-      end
-
+    def copy_browser_fingerprint
+      copy_file "browser_fingerprint.js", "app/assets/javascripts/browser_fingerprint.js"
     end
-
   end
-
 end

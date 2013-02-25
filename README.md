@@ -9,21 +9,27 @@ DESCRIPTION
 **WARNING:** this only makes a little bit harder to hijack user session, our solution basically have nothing to do with session security!!
 
 
-Logout user if HTTP_USER_AGENT and IP differs from the one saved in session. This make it harder to successfully use session hijacking tools like [firesheep](http://codebutler.com/firesheep).
+Clear session if HTTP_USER_AGENT and IP differs from the one saved in session. This make it harder to successfully use session hijacking tools like [firesheep](http://codebutler.com/firesheep).
 
 Also, usage of `browser_fingerprint.js` allows usage of pseudo-unique fingerprint of users browser details. Both combined makes much harder (at least for script kiddies using firesheep for evil purposes) to hijack session (yeah, right).
 
 REQUIREMENTS
 ------------
 
-**Devise** or other authentication system based on **Warden**
+**Rails**
 
 INSTALL
 -------
 
-`rails plugin install git://github.com/galdomedia/session_protector.git`
+add
 
-You MAY also want to install browser_fingerprint script. To do this simply run:
+`gem 'session_protector'`
+
+to Gemfile and run
+
+`bundle install`
+
+You MAY also want to install browser_fingerprint script. To do this simply:
 
 `rails generate session_protector:install`
 
