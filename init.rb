@@ -1,1 +1,0 @@
-require 'session_protector'

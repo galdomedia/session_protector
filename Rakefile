@@ -1,23 +1,8 @@
-require 'rake'
-require 'rake/testtask'
-require 'rake/rdoctask'
+require "bundler/gem_tasks"
 
-desc 'Default: run unit tests.'
-task :default => :test
+require 'rspec/core/rake_task'
 
-desc 'Test the session_protector plugin.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
-end
+RSpec::Core::RakeTask.new('spec')
 
-desc 'Generate documentation for the session_protector plugin.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'SessionProtector'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
+# If you want to make this the default task
+task :default => :spec

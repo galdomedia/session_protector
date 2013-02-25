@@ -2,7 +2,14 @@ require "session_protector/version"
 
 module SessionProtector
   # Check IP. True by default
-  mattr_accessor :check_ip
+  def self.check_ip
+    @@check_ip
+  end
+
+  def self.check_ip= attr
+    @@check_ip = attr
+  end
+
   @@check_ip = true
 
   def self.setup
